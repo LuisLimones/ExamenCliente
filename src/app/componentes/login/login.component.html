@@ -1,0 +1,16 @@
+<form class="border border-light p-5">
+
+  <p class="h4 mb-4 text-center">Iniciar Sesión</p>
+
+  <input type="email" id="usuario" class="form-control mb-4" placeholder="Usuario">
+
+  <input type="password" id="contra" class="form-control mb-4" placeholder="Contraseña">
+
+  <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
+
+  <div class="text-center">
+      <p>No tienes cuenta?
+          <a [routerLink]="['/registro-usuario']" routerLinkActive="router-link-active" >Registrate!</a>
+      </p>
+  </div>
+</form>
