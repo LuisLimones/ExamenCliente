@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/modelos/Usuario';
 
 @Component({
   selector: 'app-registro-usuario',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro-usuario.component.css']
 })
 export class RegistroUsuarioComponent implements OnInit {
+
+  usuario: string;
+  contra: string;
+
+  usuario_registrado = Usuario;
 
   constructor() { }
 

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, FormControl } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -18,8 +18,6 @@ import { VerFuncionesComponent } from './componentes/funciones/ver-funciones/ver
   declarations: [
     AppComponent,
     LoginComponent,
-    ReactiveFormsModule,
-    HttpClientModule,
     RegistroAsientoComponent,
     RegistroUsuarioComponent,
     RegistroPeliculaComponent,
@@ -30,7 +28,9 @@ import { VerFuncionesComponent } from './componentes/funciones/ver-funciones/ver
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
