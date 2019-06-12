@@ -13,6 +13,7 @@
             Películas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" [routerLink]="['peliculas']" routerLinkActive="router-link-active" >Ver películas</a>
             <a class="dropdown-item" [routerLink]="['peliculas/registrar-pelicula']" routerLinkActive="router-link-active" >Registrar Película</a>
           </div>
         </li>
@@ -21,7 +22,8 @@
           Usuarios
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" [routerLink]="['usuarios/registrar-usuario']" routerLinkActive="router-link-active" >Registrar Usuario</a>
+            <a class="dropdown-item" [routerLink]="['usuarios']" routerLinkActive="router-link-active" >Ver usuarios</a>
+            <a class="dropdown-item" [routerLink]="['usuarios/registro-usuario']" routerLinkActive="router-link-active" >Registrar Usuario</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -29,7 +31,8 @@
                 Funciones
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" [routerLink]="['funciones/registrar-funcion']" routerLinkActive="router-link-active" >Registrar Función</a>
+              <a class="dropdown-item" [routerLink]="['funciones']" routerLinkActive="router-link-active" >Ver funciones</a>  
+              <a class="dropdown-item" [routerLink]="['funciones/registrar-funcion']" routerLinkActive="router-link-active" >Registrar Función</a>
             </div>
         </li>
       </ul>
