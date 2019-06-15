@@ -1,4 +1,6 @@
-export class Usuario{
-    usuario: string;
-    contra: string;
+export class Usuario {
+    public id: number;
+    public nombre: string;
+    public contra: string;
+    public rol: string;
 }

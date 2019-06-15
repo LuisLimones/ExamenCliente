@@ -1,11 +1,20 @@
-<form class="border border-light p-5" #form="ngForm">
+<form (ngSubit)="submitAgregar()" class="border border-light p-5" #usuarioform="ngForm">
 
   <p class="h4 mb-4 text-center">Registro de Usuario</p>
 
-  <input [(ngModel)]="usuario" name="usuario" id="usuario" type="email"  class="form-control mb-4" placeholder="Usuario">
+  <input type="text" class="form-control mb-4" placeholder="Nombre de Usuario" 
+  id="nombre" required [(ngModel)]="nombre" name="nombre" #nombre="ngModel">
+  <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+    Introduzca Su Nombre
+  </div> 
 
-  <input [(ngModel)]="contra" name="contra" id="contra" type="password" class="form-control mb-4" placeholder="Contraseña">
-  <small id="contra-minimo" class="form-text text-muted mb-4">8 caracteres mínimo.</small>
+  <input type="password" class="form-control mb-4" placeholder="Contraseña"
+  id="contra" required [(ngModel)]="contra" name="contra" #contra="ngModel">
+  <div [hidden]="contra.valid || contra.pristine" class="alert alert-danger">
+    Introduzca Su Contraseña
+  </div>
 
-  <button (click)="registrarUsuario()" class="btn btn-info btn-block my-4" type="btn">Registrarse</button>
+  <button class="btn btn-info btn-block my-4" type="submit" [disabled]="!usuarioForm.form.valid">
+    Registrarse
+  </button>
 </form>
