@@ -1,22 +1,25 @@
-<form class="border border-light p-5">
+<form  (ngSubmit)="submitPelicula()" class="border border-light p-5" #peliculaForm="ngForm">
 
   <p class="h4 mb-4 text-center">Registrar Película</p>
 
-  <input type="text" id="titulo" class="form-control mb-4" placeholder="Título">
+  <input type="text" id="titulo" class="form-control mb-4" placeholder="Título"
+  required [(ngModel)]="pelicula.titulo" name="titulo" #titulo="ngModel">
 
-  <input type="text" id="fecha" class="form-control mb-4" placeholder="Clasificación">
+  <label for="clasificacion">Clasificacion</label>
+  <select class="form-control mb-4" placeholder="Clasificacion" name="clasificacion" id="clasificacion" required [(ngModel)]="pelicula.clasificacion"
+  name="clasificacion" #clasificacion="ngModel">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="B-15">B-15</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+  </select>
+  <input type="text" class="form-control mb-4" placeholder="Genero" 
+  id="genero" required [(ngModel)]="pelicula.genero" name="genero" #genero="ngModel">
 
-  <input type="text" id="fecha" class="form-control mb-4" placeholder="Género">
-  
   <label for="duracion">Duración (minutos)</label>
-  <input type="number" max="3" id="duracion" class="form-control mb-4" placeholder="">
+  <input type="number" id="duracion" class="form-control mb-4" 
+  required [(ngModel)]="pelicula.duracion" name="duracion" #duracion="ngModel">
 
-  <div class="input-group mb-3">
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="imagen">
-      <label class="custom-file-label" for="imagen">Seleccionar imagen</label>
-    </div>
-  </div>
-
-  <button class="btn btn-info btn-block my-4" type="submit">Registrar</button>
+  <button class="btn btn-info btn-block my-4" type="submit" [disabled]="!peliculaForm.form.valid">Registrar</button>
 </form>

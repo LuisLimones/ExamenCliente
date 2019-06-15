@@ -1,15 +1,15 @@
-<form (ngSubit)="submitAgregar()" class="border border-light p-5" #usuarioform="ngForm">
+<form (ngSubmit)="submitAgregar()" class="border border-light p-5" #usuarioForm="ngForm">
 
   <p class="h4 mb-4 text-center">Registro de Usuario</p>
 
   <input type="text" class="form-control mb-4" placeholder="Nombre de Usuario" 
-  id="nombre" required [(ngModel)]="nombre" name="nombre" #nombre="ngModel">
+  id="nombre" required [(ngModel)]="user.nombre" name="nombre" #nombre="ngModel">
   <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
     Introduzca Su Nombre
   </div> 
 
   <input type="password" class="form-control mb-4" placeholder="Contraseña"
-  id="contra" required [(ngModel)]="contra" name="contra" #contra="ngModel">
+  id="contra" required [(ngModel)]="user.contra" name="contra" #contra="ngModel">
   <div [hidden]="contra.valid || contra.pristine" class="alert alert-danger">
     Introduzca Su Contraseña
   </div>

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class VerFuncionesComponent implements OnInit {
 
   constructor() { }
+  horas={};
 
   ngOnInit() {
   }

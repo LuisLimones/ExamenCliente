@@ -22,7 +22,16 @@ export class RegistroUsuarioComponent implements OnInit {
   }
 
   submitAgregar(){
-    
-  }
+  this.usuarioService.postUsuario(this.user).subscribe(data =>{
+    if(data!=null){
+      location.href="/";
+      alert("Usuario agregado");
+    }
+    else{
+      alert("Usuario ya registrado o invalido");
+      location.href="/";
+    }
+  });
+}
 
 }

@@ -16,6 +16,29 @@ export class UsuarioService {
       'Authorization': 'my-auth-token'
     })
   };
+
+  //Agregar
+  postUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>(this.url+'/agregarUsuario', usuario, this.httpOptions);
+  }
+  //Obtener
+  
+  getUsuarios(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.url+'/todos');
+  }
+  //Login
+  login(data): Observable<any>{
+    return this.http.post<any>(this.url+'/login', data, this.httpOptions);
+  }
+  //Logout
+  logout(){
+    localStorage.removeItem('token');
+    location.assign('/');
+  }
+  //Verificacion login
+  logeado(){
+    return !!localStorage.getItem('token');
+  }
 }
 
 

@@ -4,6 +4,5 @@ export class Pelicula {
     public clasificacion: string;
     public genero: string;
     public duracion: number;
-    public duracion_funcion: number;
     public status: string;
 }
