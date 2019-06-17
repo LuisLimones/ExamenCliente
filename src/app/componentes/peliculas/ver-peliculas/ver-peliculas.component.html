@@ -1,34 +1,16 @@
-<div class="card mb-3 border-info float-left" style="width: 29rem; margin: 10px;">
+<div *ngFor="let peli of peliculas" class="card mb-3 border-info float-left" style="width: 29rem; margin: 10px;">
   <div class="row no-gutters">
-    <div class="col-md-5">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/51CHH4879yL.jpg" width="180" height="250" class="card-img" alt="Película">
-    </div>
     <div class="col-md-7">
       <div class="card-body">
-        <h5 class="card-title">Harry Potter y la orden del Fénix</h5> 
+        <h5 class="card-title">{{peli.titulo}}</h5> 
           <small class="text-muted">
-            <div name="" id="" class="btn btn-dark btn-sm">100 min</div>
+            <div name="" id="" class="btn btn-dark btn-sm">Duracion: {{peli.duracion}}</div>
           </small>
         <div class="dropdown-divider"></div>
-        <button type="button" name="" id="" class="btn btn-info btn-sm btn-block">Ver funciones</button>
+        <a href="/peliculas/actualizar/{{peli.id}}" name="" id="" class="btn btn-info btn-sm btn-block">
+          Actualizar Pelicula
+        </a>
       </div>
     </div>
   </div>
 </div>
-<div class="card mb-3 border-info float-left" style="width: 29rem; margin: 10px;">
-    <div class="row no-gutters">
-      <div class="col-md-5">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51CHH4879yL.jpg" width="180" height="250" class="card-img" alt="Película">
-      </div>
-      <div class="col-md-7">
-        <div class="card-body">
-          <h5 class="card-title">Harry Potter y la orden del Fénix</h5> 
-            <small class="text-muted">
-              <div name="" id="" class="btn btn-dark btn-sm">100 min</div>
-            </small>
-          <div class="dropdown-divider"></div>
-          <button type="button" name="" id="" class="btn btn-info btn-sm btn-block">Ver funciones</button>
-        </div>
-      </div>
-    </div>
-  </div>

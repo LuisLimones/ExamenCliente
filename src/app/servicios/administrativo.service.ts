@@ -24,21 +24,32 @@ export class AdministrativoService {
     return this.http.get<Pelicula[]>(this.url+'/peliculas/todas');
   }
   
+  getPelicula(id:string): Observable<Pelicula>{
+    return this.http.get<Pelicula>(this.url+'/peliculas/'+id);
+  }
+
   postPelicula(pelicula: Pelicula): Observable<Pelicula>{
     return this.http.post<Pelicula>(this.url+'/peliculas/nueva', pelicula, this.httpOptions);
   }
 
   putPelicula(pelicula: Pelicula): Observable<Pelicula>{
+    console.log('llega put pelicula servicio');
     return this.http.put<Pelicula>(this.url+'/peliculas/actualizar/'+pelicula.id, pelicula, this.httpOptions);
   }
   //Salas
-  //Funciones
   getSalas(): Observable<Sala[]>{
     return this.http.get<Sala[]>(this.url+'/salas');
   }
+  //Funciones
   postFunciones(data :any): Observable<any>{
     return this.http.post<any>(this.url+'/funciones/nueva', data, this.httpOptions);
   }
+  getFunciones(): Observable<Funcion[]>{
+    return this.http.get<Funcion[]>(this.url+'/funciones/todas');
+  }
   
   //Horarios
+  getHorarios(): Observable<Horario[]>{
+    return this.http.get<Horario[]>(this.url+'/horarios/todos');
+  }
 }

@@ -1,0 +1,26 @@
+<form  (ngSubmit)="submitActualizar()" class="border border-light p-5" #peliculaForm="ngForm">
+
+  <p class="h4 mb-4 text-center">Registrar Película</p>
+
+  <input type="text" id="titulo" class="form-control mb-4" placeholder="Título"
+  required [(ngModel)]="pelicula.titulo" name="titulo" #titulo="ngModel">
+
+  <label for="clasificacion">Clasificacion</label>
+  <select class="form-control mb-4" placeholder="Clasificacion" name="clasificacion" id="clasificacion" required [(ngModel)]="pelicula.clasificacion"
+  name="clasificacion" #clasificacion="ngModel">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="B-15">B-15</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+  </select>
+  <input type="text" class="form-control mb-4" placeholder="Genero" 
+  id="genero" required [(ngModel)]="pelicula.genero" name="genero" #genero="ngModel">
+
+  <label for="duracion">Duración (minutos)</label>
+  <input type="number" id="duracion" class="form-control mb-4" 
+  required [(ngModel)]="pelicula.duracion" name="duracion" #duracion="ngModel">
+
+  <button class="btn btn-info btn-block my-4" type="submit" [disabled]="!peliculaForm.form.valid">Registrar</button>
+</form>
+{{pelicula.id}}, {{pelicula.titulo}}

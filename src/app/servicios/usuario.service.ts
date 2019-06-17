@@ -39,6 +39,10 @@ export class UsuarioService {
   logeado(){
     return !!localStorage.getItem('token');
   }
+  //Verificacion Rol
+  getRol():Observable<any>{
+    return this.http.get<any>(this.url+'/rol');
+  }
 }
 
 

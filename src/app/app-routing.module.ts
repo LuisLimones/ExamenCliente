@@ -8,6 +8,7 @@ import { RegistroUsuarioComponent } from './componentes/usuarios/registro-usuari
 
 import { VerPeliculasComponent } from './componentes/peliculas/ver-peliculas/ver-peliculas.component';
 import { RegistroPeliculaComponent } from './componentes/peliculas/registro-pelicula/registro-pelicula.component';
+import { ActualizarPeliculasComponent } from './componentes/peliculas/actualizar-peliculas/actualizar-peliculas.component';
 
 import { VerFuncionesComponent } from './componentes/funciones/ver-funciones/ver-funciones.component';
 import { RegistroFuncionComponent } from './componentes/funciones/registro-funcion/registro-funcion.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
 
   {path: 'peliculas', component: VerPeliculasComponent},
   {path: 'peliculas/registrar-pelicula', component: RegistroPeliculaComponent},
+  {path: 'peliculas/actualizar/:id', component: ActualizarPeliculasComponent},
   
   {path: 'usuarios', component: VerUsuariosComponent},
   {path: 'usuarios/registro-usuario', component: RegistroUsuarioComponent},

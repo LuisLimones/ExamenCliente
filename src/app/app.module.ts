@@ -14,6 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { VerUsuariosComponent } from './componentes/usuarios/ver-usuarios/ver-usuarios.component';
 import { VerPeliculasComponent } from './componentes/peliculas/ver-peliculas/ver-peliculas.component';
 import { VerFuncionesComponent } from './componentes/funciones/ver-funciones/ver-funciones.component';
+import { ActualizarPeliculasComponent } from './componentes/peliculas/actualizar-peliculas/actualizar-peliculas.component';
+import { ActualizarFuncionesComponent } from './componentes/funciones/actualizar-funciones/actualizar-funciones.component';
+
 
 //Servicios
 import { UsuarioService } from './servicios/usuario.service';
@@ -21,6 +24,8 @@ import{ AdministrativoService } from './servicios/administrativo.service';
 import { TaquillaService } from './servicios/taquilla.service';
 import { InterceptorService } from './servicios/interceptor.service';
 //Guards
+import { AuthGuard } from './guards/auth.guard';
+import { RolGuard } from './guards/rol.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,9 @@ import { InterceptorService } from './servicios/interceptor.service';
     RegistroFuncionComponent,
     VerUsuariosComponent,
     VerPeliculasComponent,
-    VerFuncionesComponent
+    VerFuncionesComponent,
+    ActualizarPeliculasComponent,
+    ActualizarFuncionesComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +56,8 @@ import { InterceptorService } from './servicios/interceptor.service';
     },
     UsuarioService,
     AdministrativoService,
-    TaquillaService
+    TaquillaService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
