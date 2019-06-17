@@ -20,8 +20,6 @@ import { UsuarioService } from './servicios/usuario.service';
 import{ AdministrativoService } from './servicios/administrativo.service';
 import { TaquillaService } from './servicios/taquilla.service';
 import { InterceptorService } from './servicios/interceptor.service';
-import { ActualizarPeliculaComponent } from './peliculas/actualizar-pelicula/actualizar-pelicula.component';
-import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-usuario/actualizar-usuario.component';
 //Guards
 
 @NgModule({
@@ -34,9 +32,7 @@ import { ActualizarUsuarioComponent } from './componentes/usuarios/actualizar-us
     RegistroFuncionComponent,
     VerUsuariosComponent,
     VerPeliculasComponent,
-    VerFuncionesComponent,
-    ActualizarPeliculaComponent,
-    ActualizarUsuarioComponent
+    VerFuncionesComponent
   ],
   imports: [
     BrowserModule,

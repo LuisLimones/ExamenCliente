@@ -1,16 +1,32 @@
-<form class="border border-light p-5">
-
-  <p class="h4 mb-4 text-center">Registrar Función</p>
-
-  <label for="peliculas">Seleccione película</label>
-  <select id="peliculas" class="custom-select form-control mb-4">
-    <option selected>Seleccione...</option>
-    <option value="1">Harry Potter</option>
-    <option value="2">El Señor de los anillos</option>
-    <option value="3">Los juegos del hambre</option>
-  </select>
-
-  
-
-  <button class="btn btn-info btn-block my-4" type="submit">Registrar</button>
+<form (ngSubmit)="registrarFuncion()" class="border border-light p-5" #funcionForm="ngForm">
+    <p class="h4 mb-4 text-center">Registrar Funciones</p>
+    <label for="pelicula">Seleccione la Pelicula para la funcion</label>
+    <select class="form-control mb-4" name="pelicula" id="pelicula" [(ngModel)]="funcion.pelicula_id">
+        <option *ngFor="let pel of peliculas" value="{{pel.id}}">{{pel.titulo}} {{pel.duracion}} minutos</option>
+    </select>
+    <label for="sala">Seleccione la Sala de la funcion</label>
+    <select class="form-control mb-4" name="sala" id="sala" [(ngModel)]="funcion.sala_id">
+        <option *ngFor="let sa of salas" value="{{sa.id}}">{{sa.numero}}</option>
+    </select>
+    <p class="h4 mb-4 text-center">Registrar Horarios</p>
+    <p class="h5">Escriba la hora del horario para la funcion y presione "Agregar Horario" por cada hora de la funcion</p>
+    <label for="horario">Escriba las horas de la funcion</label>
+    <input type="text" class="form-control mb-4" id="horario" name="horario" [(ngModel)]="horario">
+    <button class="btn btn-primary" (click)="agregarHorario()">Agregar Horario</button>
+    <p class="h5">Una vez que haya escrito todos los horarios de la funcion presione Crear Funcion</p>
+    <button type="submit">Crear Funcion</button>
 </form>
+<table class="table">
+    <thead class="thed-dark">
+        <tr>
+            <th>Horario</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hora of horarios">
+            <td>{{hora}}</td>
+            <td><a (click)="pruebaValor()" class="btn btn-danger">Borrar</a></td>
+        </tr>
+    </tbody>
+</table>

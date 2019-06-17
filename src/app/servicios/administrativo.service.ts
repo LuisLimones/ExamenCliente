@@ -23,6 +23,7 @@ export class AdministrativoService {
   getPeliculas(): Observable<Pelicula[]>{
     return this.http.get<Pelicula[]>(this.url+'/peliculas/todas');
   }
+  
   postPelicula(pelicula: Pelicula): Observable<Pelicula>{
     return this.http.post<Pelicula>(this.url+'/peliculas/nueva', pelicula, this.httpOptions);
   }
@@ -32,5 +33,12 @@ export class AdministrativoService {
   }
   //Salas
   //Funciones
+  getSalas(): Observable<Sala[]>{
+    return this.http.get<Sala[]>(this.url+'/salas');
+  }
+  postFunciones(data :any): Observable<any>{
+    return this.http.post<any>(this.url+'/funciones/nueva', data, this.httpOptions);
+  }
+  
   //Horarios
 }
